@@ -70,6 +70,7 @@ func createConnectionStep(src, dst *ProvableChain) (*RelayMsgs, error) {
 		return nil, err
 	}
 	// First, update the light clients to the latest header and return the header
+	// 获取 header，并没有执行更新
 	sh, err := NewSyncHeaders(src, dst)
 	if err != nil {
 		return nil, err
