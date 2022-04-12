@@ -1,6 +1,6 @@
 .PHONY: build
 build:
-	go build -o ./build/uly .
+	go build -mod vendor -o ./build/uly .
 
 .PHONY: test
 test:
