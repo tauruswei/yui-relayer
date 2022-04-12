@@ -13,7 +13,7 @@ COPY ./chaincode/fabibc /root/chaincode/fabibc
 
 WORKDIR /root/chaincode/fabibc
 
-RUN go build -v -mod readonly -o fabibc .
+RUN go build -v -mod vendor -o fabibc .
 
 FROM debian:buster
 

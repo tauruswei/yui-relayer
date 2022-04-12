@@ -2,7 +2,7 @@
 
 set -eux
 
-DOCKER_BUILD="docker build --rm --no-cache --pull -mod vendor"
+DOCKER_BUILD="docker build --rm --no-cache --pull"
 
 DOCKER_REPO=$1
 DOCKER_TAG=$2
