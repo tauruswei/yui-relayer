@@ -3,6 +3,7 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/prometheus/common/log"
 	"io/ioutil"
 	"os"
 	"path"
@@ -39,6 +40,7 @@ func configInitCmd() *cobra.Command {
 			if err != nil {
 				return err
 			}
+			log.Infof("home = %s", home)
 
 			cfgDir := path.Join(home, "config")
 			cfgPath := path.Join(cfgDir, "config.yaml")

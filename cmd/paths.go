@@ -3,6 +3,7 @@ package cmd
 import (
 	"encoding/json"
 	"fmt"
+	"github.com/prometheus/common/log"
 	"io/ioutil"
 	"os"
 
@@ -152,6 +153,8 @@ func userInputPathAdd(config *config.Config, src, dst, name string) error {
 	if value, err = readStdin(); err != nil {
 		return err
 	}
+
+	log.Infof("value = %s", value)
 
 	path.Src.ClientID = value
 
