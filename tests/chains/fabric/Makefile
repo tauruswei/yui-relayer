@@ -22,6 +22,7 @@ clean:
 	rm -rf build
 	rm -rf organizations
 	rm -rf external-builders/config/**/fabibc/code.tar.gz
+	docker-compose -f ../../cases/docker-compose-test.yaml down
 
 .PHONY: cryptogen
 cryptogen:

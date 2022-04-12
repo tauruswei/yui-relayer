@@ -2,6 +2,7 @@
 
 ```shell script
 # download fabric binaries
+$ make clean
 $ make bin
 ```
 
