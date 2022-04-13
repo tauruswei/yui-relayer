@@ -2,6 +2,7 @@ package fabric
 
 import (
 	"fmt"
+	"github.com/cloudflare/cfssl/log"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	clienttypes "github.com/cosmos/ibc-go/modules/core/02-client/types"
@@ -12,6 +13,8 @@ import (
 // CreateMsgCreateClient creates a CreateClientMsg to this chain
 func (pr *Prover) CreateMsgCreateClient(clientID string, dstHeader core.HeaderI, signer sdk.AccAddress) (*clienttypes.MsgCreateClient, error) {
 	h := dstHeader.(*fabrictypes.Header)
+
+	log.Infof("dstHeader = %v", dstHeader)
 
 	mspInfos, err := createMSPInitialClientState(h.MSPHeaders.Headers)
 	if err != nil {

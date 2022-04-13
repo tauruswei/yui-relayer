@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	log1 "github.com/prometheus/common/log"
 	"log"
 	"time"
 
@@ -66,11 +67,12 @@ func CreateConnection(src, dst *ProvableChain, to time.Duration) error {
 
 func createConnectionStep(src, dst *ProvableChain) (*RelayMsgs, error) {
 	out := NewRelayMsgs()
+	// 验证参数有效性
 	if err := validatePaths(src, dst); err != nil {
 		return nil, err
 	}
 	// First, update the light clients to the latest header and return the header
-	// 获取 header，并没有执行更新
+	// 获取最新的 header，并没有执行更新
 	sh, err := NewSyncHeaders(src, dst)
 	if err != nil {
 		return nil, err
@@ -84,10 +86,15 @@ func createConnectionStep(src, dst *ProvableChain) (*RelayMsgs, error) {
 		srcConsH, dstConsH               ibcexported.Height
 	)
 	err = retry.Do(func() error {
+		// get headers 并没有实现，返回的都是 nil
 		srcUpdateHeader, dstUpdateHeader, err = sh.GetHeaders(src, dst)
+
+		log1.Infof("srcUpdateHeader = %v, dstUpdateHeader = %v", srcUpdateHeader, dstUpdateHeader)
+
 		return err
 	}, rtyAtt, rtyDel, rtyErr, retry.OnRetry(func(n uint, err error) {
 		// logRetryUpdateHeaders(src, dst, n, err)
+		// 获取 src 和 dst 的最新 header
 		if err := sh.Updates(src, dst); err != nil {
 			panic(err)
 		}

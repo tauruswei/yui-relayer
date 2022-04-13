@@ -11,7 +11,7 @@ func CreateClients(src, dst *ProvableChain) error {
 	var (
 		clients = &RelayMsgs{Src: []sdk.Msg{}, Dst: []sdk.Msg{}}
 	)
-
+	// 获取最新的 header
 	srcH, dstH, err := UpdatesWithHeaders(src, dst)
 	if err != nil {
 		return err
