@@ -2,7 +2,6 @@ package app
 
 import (
 	"strings"
-	"github.com/prometheus/common/log"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
 	sdkerrors "github.com/cosmos/cosmos-sdk/types/errors"
@@ -26,7 +25,6 @@ func (app *BaseApp) Query(req abci.RequestQuery) abci.ResponseQuery {
 	if len(path) == 0 {
 		return sdkerrors.QueryResult(sdkerrors.Wrap(sdkerrors.ErrUnknownRequest, "no query path provided"))
 	}
-	log.Info("not found ")
 
 	switch path[0] {
 	case "store":
