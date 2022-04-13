@@ -11,6 +11,8 @@ import (
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/encoding"
 	"google.golang.org/grpc/encoding/proto"
+	
+	"github.com/prometheus/common/log"
 
 	codectypes "github.com/cosmos/cosmos-sdk/codec/types"
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -55,6 +57,7 @@ type GRPCQueryHandler = func(ctx sdk.Context, req abci.RequestQuery) (abci.Respo
 // if not found
 func (qrt *GRPCQueryRouter) Route(path string) GRPCQueryHandler {
 	handler, found := qrt.routes[path]
+	log.Infof("found = %t",found)
 	if !found {
 		return nil
 	}
