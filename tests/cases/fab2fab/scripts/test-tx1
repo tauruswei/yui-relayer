@@ -20,5 +20,5 @@ FABRIC_ADDRESS1=$(${RLY} fabric wallet address ibc1 | tail -n 1)
 
 echo "!!! Fabric -> Fabric !!!"
 
-echo "Before Fab0 balance: $(${RLY} query balance ibc0 ${FABRIC_ADDRESS0} | tail -n 1)"
-#echo "Before Fab1 balance: $(${RLY} query balance ibc1 ${FABRIC_ADDRESS0} | tail -n 1)"
+#echo "Before Fab0 balance: $(${RLY} query balance ibc0 ${FABRIC_ADDRESS0} | tail -n 1)"
+echo "Before Fab1 balance: $(${RLY} query balance ibc1 ${FABRIC_ADDRESS0} | tail -n 1)"
