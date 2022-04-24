@@ -1,6 +1,7 @@
 package fabric
 
 import (
+	"github.com/prometheus/common/log"
 	"path/filepath"
 
 	msppb "github.com/hyperledger/fabric-protos-go/msp"
@@ -8,6 +9,7 @@ import (
 )
 
 func (c *Chain) PopulateWallet(certPath, privateKeyPath string) error {
+	log.Infof("wallet path = %s , label = %s ", c.getWalletPath(), c.config.WalletLabel)
 	return c.gateway.PopulateWallet(c.getWalletPath(), c.config.WalletLabel, certPath, privateKeyPath)
 }
 
