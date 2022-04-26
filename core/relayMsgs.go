@@ -14,7 +14,7 @@ type RelayMsgs struct {
 	MaxTxSize    uint64    `json:"max_tx_size"`    // maximum permitted size of the msgs in a bundled relay transaction
 	MaxMsgLength uint64    `json:"max_msg_length"` // maximum amount of messages in a bundled relay transaction
 
-	Last      bool `json:"last"`
+	Last      bool `json:"last"` // 标识 connection 或者 channel 是否成功建立
 	Succeeded bool `json:"success"`
 }
 
