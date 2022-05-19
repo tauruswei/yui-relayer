@@ -10,8 +10,10 @@ SCRIPT_DIR ?= $(CURDIR)/scripts
 
 .PHONY: bin
 bin:
+	set -x
 	rm -rf ./.bin
-	curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/v$(FABRIC_VERSION)/scripts/bootstrap.sh | bash -s -- $(FABRIC_VERSION) $(FABRIC_CA_VERSION) -d -s
+	#curl -sSL https://raw.githubusercontent.com/hyperledger/fabric/v$(FABRIC_VERSION)/scripts/bootstrap.sh | bash -s -- $(FABRIC_VERSION) $(FABRIC_CA_VERSION) -d -s
+	bash bootstrap.sh $(FABRIC_VERSION) $(FABRIC_CA_VERSION) -d -s
 	rm -rf ./config
 	mv ./bin ./.bin
 

@@ -7,6 +7,7 @@ services:
   fabric-orderer.example.com:
     container_name: fabric-orderer.example.com
     image: hyperledger/fabric-orderer:${IMAGE_TAG}
+    platform: linux/amd64
     environment:
       - FABRIC_LOGGING_SPEC=INFO
       - ORDERER_GENERAL_LISTENADDRESS=0.0.0.0
@@ -31,6 +32,7 @@ services:
   fabric-peer0.org1.example.com:
     container_name: fabric-peer0.org1.example.com
     image: hyperledger/fabric-peer:${IMAGE_TAG}
+    platform: linux/amd64
     environment:
       - FABRIC_LOGGING_SPEC=INFO
       - CORE_PEER_ID=fabric-peer0.org1.example.com
@@ -60,6 +62,7 @@ services:
   fabric-peer0.org2.example.com:
     container_name: fabric-peer0.org2.example.com
     image: hyperledger/fabric-peer:${IMAGE_TAG}
+    platform: linux/amd64
     environment:
       - FABRIC_LOGGING_SPEC=INFO
       - CORE_PEER_ID=fabric-peer0.org2.example.com

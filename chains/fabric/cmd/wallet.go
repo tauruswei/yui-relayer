@@ -2,10 +2,10 @@ package cmd
 
 import (
 	"fmt"
-
 	fabricauthtypes "github.com/hyperledger-labs/yui-fabric-ibc/x/auth/types"
 	"github.com/hyperledger-labs/yui-relayer/chains/fabric"
 	"github.com/hyperledger-labs/yui-relayer/config"
+	"github.com/prometheus/common/log"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )
@@ -63,10 +63,12 @@ func showAddressCmd(ctx *config.Context) *cobra.Command {
 			if err != nil {
 				return err
 			}
+			log.Infof("sid = %v", sid)
 			addr, err := fabricauthtypes.MakeCreatorAddressWithSerializedIdentity(sid)
 			if err != nil {
 				return err
 			}
+			log.Infof("addr = %s", addr.String())
 			fmt.Println(addr.String())
 			return nil
 		},

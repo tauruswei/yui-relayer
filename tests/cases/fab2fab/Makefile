@@ -15,6 +15,7 @@ test:
 	@./scripts/init-rly
 	@./scripts/handshake
 	@./scripts/test-tx
+	@./scripts/test-tx-transfer
 
 .PHONY: network-down
 network-down:

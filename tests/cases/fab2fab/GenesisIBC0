@@ -1,0 +1,126 @@
+{
+    "auth":{
+        "params":{
+            "max_memo_characters":"256",
+            "tx_sig_limit":"7",
+            "tx_size_cost_per_byte":"10",
+            "sig_verify_cost_ed25519":"590",
+            "sig_verify_cost_secp256k1":"1000"
+        },
+        "accounts":[
+            {
+                "@type":"/cosmos.auth.v1beta1.BaseAccount",
+                "address":"cosmos1kx3qcj23vkv5539afu7cs2v2hg8q4gr6yknrtv",
+                "pub_key":{
+                    "@type":"/cosmos.crypto.secp256k1.PubKey",
+                    "key":"A8TZc5IqzfHKT1RazpGd2lA2ctlD9eqtEyMGrezJfPN0"
+                },
+                "account_number":"0",
+                "sequence":"0"
+            }
+        ]
+    },
+    "bank":{
+        "params":{
+            "send_enabled":[
+
+            ],
+            "default_send_enabled":true
+        },
+        "balances":[
+            {
+                "address":"cosmos1kx3qcj23vkv5539afu7cs2v2hg8q4gr6yknrtv",
+                "coins":[
+                    {
+                        "denom":"stake",
+                        "amount":"100000000000000"
+                    }
+                ]
+            }
+        ],
+        "supply":[
+            {
+                "denom":"stake",
+                "amount":"100000000000000"
+            }
+        ],
+        "denom_metadata":[
+
+        ]
+    },
+    "capability":{
+        "index":"1",
+        "owners":[
+
+        ]
+    },
+    "hyperledgerfabric":null,
+    "ibc":{
+        "client_genesis":{
+            "clients":[
+
+            ],
+            "clients_consensus":[
+
+            ],
+            "clients_metadata":[
+
+            ],
+            "params":{
+                "allowed_clients":[
+                    "06-solomachine",
+                    "07-tendermint",
+                    "hyperledgerfabric"
+                ]
+            },
+            "create_localhost":false,
+            "next_client_sequence":"0"
+        },
+        "connection_genesis":{
+            "connections":[
+
+            ],
+            "client_connection_paths":[
+
+            ],
+            "next_connection_sequence":"0",
+            "params":{
+                "max_expected_time_per_block":"30000000000"
+            }
+        },
+        "channel_genesis":{
+            "channels":[
+
+            ],
+            "acknowledgements":[
+
+            ],
+            "commitments":[
+
+            ],
+            "receipts":[
+
+            ],
+            "send_sequences":[
+
+            ],
+            "recv_sequences":[
+
+            ],
+            "ack_sequences":[
+
+            ],
+            "next_channel_sequence":"0"
+        }
+    },
+    "transfer":{
+        "port_id":"transfer",
+        "denom_traces":[
+
+        ],
+        "params":{
+            "send_enabled":true,
+            "receive_enabled":true
+        }
+    }
+}

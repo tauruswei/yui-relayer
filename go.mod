@@ -4,6 +4,8 @@ go 1.15
 
 require (
 	github.com/avast/retry-go v3.0.0+incompatible
+	github.com/btcsuite/btcd v0.21.0-beta
+	github.com/cloudflare/cfssl v1.4.1
 	github.com/cosmos/cosmos-sdk v0.43.0-beta1
 	github.com/cosmos/go-bip39 v1.0.0
 	github.com/cosmos/ibc-go v1.0.0-beta1
@@ -16,6 +18,7 @@ require (
 	github.com/hyperledger/fabric v1.4.0-rc1.0.20200416031218-eff2f9306191
 	github.com/hyperledger/fabric-protos-go v0.0.0-20200707132912-fee30f3ccd23
 	github.com/hyperledger/fabric-sdk-go v1.0.0-beta2.0.20200715151216-87f5eb8a655f
+	github.com/pkg/errors v0.9.1
 	github.com/prometheus/common v0.23.0
 	github.com/spf13/cobra v1.1.3
 	github.com/spf13/viper v1.7.1

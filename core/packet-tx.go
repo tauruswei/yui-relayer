@@ -2,6 +2,7 @@ package core
 
 import (
 	"fmt"
+	"github.com/prometheus/common/log"
 	"time"
 
 	sdk "github.com/cosmos/cosmos-sdk/types"
@@ -39,6 +40,9 @@ func SendTransferMsg(src, dst *ProvableChain, amount sdk.Coin, dstAddr fmt.Strin
 	if err != nil {
 		return err
 	}
+
+	log.Infof("timeoutHeight = %d", timeoutHeight)
+	log.Infof("timeoutTimestamp = %v", timeoutTimestamp)
 
 	// MsgTransfer will call SendPacket on src chain
 	txs := RelayMsgs{
