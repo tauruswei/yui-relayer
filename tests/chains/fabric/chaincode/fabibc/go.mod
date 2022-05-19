@@ -25,7 +25,6 @@ require (
 	github.com/hyperledger/fabric-amcl v0.0.0-20210603140002-2670f91851c8 // indirect
 	github.com/hyperledger/fabric-chaincode-go v0.0.0-20200511190512-bcfeb58dd83a
 	github.com/hyperledger/fabric-contract-api-go v1.1.0
-	github.com/hyperledger/fabric-lib-go v1.0.0 // indirect
 	github.com/miekg/pkcs11 v1.1.1 // indirect
 	github.com/rakyll/statik v0.1.7 // indirect
 	github.com/regen-network/cosmos-proto v0.3.1 // indirect
