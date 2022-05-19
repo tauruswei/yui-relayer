@@ -112,6 +112,8 @@ func (k Keeper) SendTransfer(
 
 	if types.SenderChainIsSource(sourcePort, sourceChannel, fullDenomPath) {
 		log.Info("SenderChainIsSource")
+		log.Info("SenderChainIsSource")
+
 		labels = append(labels, telemetry.NewLabel("source", "true"))
 
 		// create the escrow address for the tokens
